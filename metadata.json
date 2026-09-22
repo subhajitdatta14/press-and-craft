@@ -1,0 +1,6 @@
+{
+  "name": "PRESS & CRAFT",
+  "description": "An authentic digital recreation of the historic 1874 E. Remington & Sons mechanical typewriter with tactile keystrokes, platen returns, and physical paper manuscript experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Carnivalee Freakshow';
+  src: url('/fonts/carnevalee-freakshow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --paper-cream: #FAF5C6;
+    --paper-fiber: #EEDF98;
+    --typewriter-ink: #1B1A17;
+    --machine-body: #1F2023;
+    --machine-metal: #2C2D31;
+    --machine-rim: #B8B5AE;
+    --machine-brass: #C5A059;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow-x: hidden;
+    background-color: #582006;
+    color: #E4DEC9;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Remove side scrollbars across every element and section while preserving scrollability */
+html,
+body,
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+/* Custom typewriter typography classes */
+.font-typewriter {
+  font-family: 'Special Elite', 'Courier Prime', 'Courier', monospace;
+  letter-spacing: 0.04em;
+}
+
+.font-courier {
+  font-family: 'Courier Prime', 'Courier', monospace;
+}
+
+.font-brand {
+  font-family: 'Cinzel', serif;
+}
+
+/* Authentic typewriter ribbon ink effect:
+   Subtle ink bleed, crisp stamped impression with slight texture */
+.typewriter-ink-text {
+  color: #1A1917;
+  text-shadow: 0 0 0.5px rgba(27, 26, 23, 0.4);
+}
+
+/* Paper authentic paper texture simulation */
+.paper-texture {
+  background-color: #FAF5C6;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px rgba(220, 200, 100, 0.08);
+}
+
+/* Vintage metal chassis texture */
+.chassis-finish {
+  background-color: #1A1A1D;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, #2A2B30 0%, #151618 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+    0 12px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* Platen cylinder 3D effect */
+.platen-roller {
+  background: linear-gradient(
+    180deg,
+    #111214 0%,
+    #222327 30%,
+    #32343B 50%,
+    #1A1B1D 70%,
+    #0E0F10 100%
+  );
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Authentic mechanical key button styling */
+.typewriter-key {
+  position: relative;
+  background: radial-gradient(circle at 35% 30%, #303136 0%, #17181A 100%);
+  border: 1.5px solid #8E8D88;
+  box-shadow: 
+    0 4px 0 #0D0E10,
+    0 6px 8px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: transform 0.04s cubic-bezier(0.1, 0.9, 0.2, 1), box-shadow 0.04s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.typewriter-key:hover {
+  border-color: #ABA8A0;
+}
+
+.typewriter-key:active,
+.typewriter-key.pressed {
+  transform: translateY(3px) scale(0.97);
+  box-shadow: 
+    0 1px 0 #0D0E10,
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    inset 0 2px 3px rgba(0, 0, 0, 0.6);
+  border-color: #D3A762;
+}
+
+/* Smartphone/Mobile responsive keypad button enhancements */
+@media (max-width: 639px) {
+  .typewriter-key {
+    border-radius: 6px;
+    border-width: 1px;
+    box-shadow: 
+      0 2.5px 0 #0D0E10,
+      0 3px 5px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.25);
+  }
+  .typewriter-key:active,
+  .typewriter-key.pressed {
+    transform: translateY(2px) scale(0.96);
+    box-shadow: 
+      0 1px 0 #0D0E10,
+      0 1.5px 3px rgba(0, 0, 0, 0.5),
+      inset 0 1.5px 2px rgba(0, 0, 0, 0.6);
+  }
+  .typewriter-space-bar {
+    border-radius: 6px;
+    border-width: 1px;
+    box-shadow: 
+      0 3px 0 #0C0D0F,
+      0 4px 8px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.2);
+  }
+  .typewriter-space-bar:active,
+  .typewriter-space-bar.pressed {
+    transform: translateY(2px);
+    box-shadow: 
+      0 1px 0 #0C0D0F,
+      0 1.5px 3px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.typewriter-space-bar {
+  background: linear-gradient(180deg, #2D2E33 0%, #18191B 100%);
+  border: 1.5px solid #787772;
+  box-shadow: 
+    0 5px 0 #0C0D0F,
+    0 8px 12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transition: transform 0.04s ease, box-shadow 0.04s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.typewriter-space-bar:active,
+.typewriter-space-bar.pressed {
+  transform: translateY(4px);
+  box-shadow: 
+    0 1px 0 #0C0D0F,
+    0 2px 4px rgba(0, 0, 0, 0.7);
+  border-color: #C5A059;
+}
+
+/* Chrome / brass nameplate */
+.nameplate-badge {
+  background: linear-gradient(135deg, #A88647 0%, #E3C57C 40%, #8D6B2D 80%, #5E461A 100%);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Authentic carved / branded vintage wood inscription style using exact font */
+.wood-inscription-style {
+  font-family: 'Carnivalee Freakshow', serif;
+  letter-spacing: 0.12em;
+  color: #240C03;
+  text-shadow: 
+    0 -1.5px 1.5px rgba(10, 3, 1, 0.95),
+    0 1px 1.5px rgba(255, 195, 125, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Carriage strike guide / ribbon vibrator */
+.type-guide {
+  background: linear-gradient(180deg, #42444A 0%, #202125 100%);
+  border: 1px solid #5A5D66;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Dedicated Print Media Styles */
+@keyframes paperTearAway {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  }
+  35% {
+    transform: translateY(-40px) rotate(-1.5deg) skewX(-1.5deg);
+    opacity: 0.95;
+  }
+  70% {
+    transform: translateY(-120px) rotate(3deg) scale(0.96);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-260px) rotate(4deg) scale(0.92);
+    opacity: 0;
+  }
+}
+
+.animate-paper-tear {
+  animation: paperTearAway 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+}
+
+/* Authentic Paper Insert from Platen Animation */
+@keyframes paperInsertFeed {
+  0% {
+    transform: translateY(160px) scale(0.96);
+    opacity: 0.3;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
+  }
+}
+
+.animate-paper-insert {
+  animation: paperInsertFeed 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 15mm;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .paper-print-container {
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2cm !important;
+    overflow: visible !important;
+    height: auto !important;
+    transform: none !important;
+    color: #000 !important;
+  }
+
+  .paper-print-container * {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  /* When printing from the expanded paper sheet modal */
+  body:has(#expanded-paper-modal-backdrop) main,
+  body:has(#expanded-paper-modal-backdrop) header,
+  body:has(#expanded-paper-modal-backdrop) #wooden-desk-background,
+  body:has(#expanded-paper-modal-backdrop) #top-left-floating-toolbar,
+  body:has(#expanded-paper-modal-backdrop) #bottom-left-floating-toolbar {
+    display: none !important;
+  }
+
+  body:has(#expanded-paper-modal-backdrop) #expanded-paper-modal-backdrop {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body:has(#expanded-paper-modal-backdrop) #expanded-paper-dialog {
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body:has(#expanded-paper-modal-backdrop) #expanded-paper-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5cm !important;
+    min-height: auto !important;
+    color: #000 !important;
+  }
+
+  body:has(#expanded-paper-modal-backdrop) #expanded-paper-sheet * {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+}
