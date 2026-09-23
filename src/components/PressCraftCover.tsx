@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { playTypewriterSound } from '../utils/audio';
 
 interface PressCraftCoverProps {
@@ -6,9 +6,30 @@ interface PressCraftCoverProps {
 }
 
 export const PressCraftCover: React.FC<PressCraftCoverProps> = ({ onEnter }) => {
+  const [isFontReady, setIsFontReady] = useState<boolean>(() => {
+    if (typeof document !== 'undefined' && document.fonts && document.fonts.check) {
+      return document.fonts.check('1em "Carnivalee Freakshow"');
+    }
+    return false;
+  });
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.focus();
+    }
+
+    if (typeof document !== 'undefined' && document.fonts) {
+      if (document.fonts.check && document.fonts.check('1em "Carnivalee Freakshow"')) {
+        setIsFontReady(true);
+      } else {
+        document.fonts.load('1em "Carnivalee Freakshow"').then(() => {
+          setIsFontReady(true);
+        }).catch(() => {
+          setIsFontReady(true);
+        });
+      }
+    } else {
+      setIsFontReady(true);
     }
   }, []);
 
@@ -76,7 +97,9 @@ export const PressCraftCover: React.FC<PressCraftCoverProps> = ({ onEnter }) => 
       <div className="relative z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center max-w-full">
         <h1
           id="press-craft-cover-title"
-          className="text-4xl min-[360px]:text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.04em] min-[360px]:tracking-[0.06em] sm:tracking-[0.1em] text-[#1D140D] font-normal leading-tight select-none transition-transform duration-300 hover:scale-[1.02] px-2 break-words"
+          className={`text-4xl min-[360px]:text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.04em] min-[360px]:tracking-[0.06em] sm:tracking-[0.1em] text-[#1D140D] font-normal leading-tight select-none transition-all duration-200 hover:scale-[1.02] px-2 break-words ${
+            isFontReady ? 'opacity-100' : 'opacity-0'
+          }`}
           style={{
             fontFamily: "'Carnivalee Freakshow', 'Cinzel', serif",
             textShadow: '0 1px 2px rgba(255,255,255,0.4)',
