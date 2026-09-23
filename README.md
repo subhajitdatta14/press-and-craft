@@ -5,7 +5,7 @@
 **Live Demo:** https://press-and-craft.vercel.app/
 <br />
 
-<img src="./public/typewriter-engraving.svg" width="140" alt="1874 Typewriter Engraving" />
+<img src="./public/typewriter-illustration.svg" width="220" alt="Press & Craft 1874 Mechanical Typewriter" />
 
 <br />
 
