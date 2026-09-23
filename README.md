@@ -5,8 +5,7 @@
 **Live Demo:** https://press-and-craft.vercel.app/
 <br />
 
-<img src="./public/typewriter-illustration.svg" width="220" alt="Press & Craft 1874 Mechanical Typewriter" />
-
+<img src="https://ais-pre-5g6dcybx6sayy4epyxsxrw-711746768395.asia-east1.run.app/typewriter-engraving.svg" width="220" />
 <br />
 
 ### An authentic digital recreation of the historic 1874 E. Remington & Sons mechanical typewriter.
